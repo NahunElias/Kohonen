@@ -18,8 +18,8 @@
             </a>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
-                <li><a href="/pesos" class="nav-link px-2 link-dark">Inicializar Pesos</a></li>
+                <li><a href="/" class="nav-link px-2 link-dark">Home</a></li>
+                <li><a href="/pesos" class="nav-link px-2 link-secondary">Inicializar Pesos</a></li>
                 <li><a href="/entrenamiento" class="nav-link px-2 link-dark">Entrenamiento</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
@@ -33,33 +33,30 @@
         </div>
         <div class="container">
             <div class="center">
-                <h1>Banco de datos</h1>
+                <h1>Matriz de pesos</h1>
             </div>
             <table class="table">
                 <thead>
                 <tr>
-                    @for ($i = 1; $i <= $entradas; $i++)
+                    @for ($i = 1; $i <= 20 ; $i++)
                         <th scope="col">X{{ $i }}</th>
                     @endfor
 
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach ($patrones as $patron)
+                    @for ($i = 0; $i <= $20 ; $i++)
                     <tr>
 
-
-                        @for ($i = 1; $i <= $entradas; $i++)
-                        <td>{{ $patron['X'.$i] }}</td>
-
+                        @for ($j = 0; $j <= $40 ; $j++)
+                        <td>{{ $matriz[$i][$j] }}</td>
                         @endfor
 
-
                     </tr>
-
-                    @endforeach
+                    @endfor
                 </tbody>
             </table>
         </div>
     </body>
 </html>
+

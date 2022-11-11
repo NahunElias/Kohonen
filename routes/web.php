@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'KohonenController@crearRed');
+Route::get('/', 'KohonenController@index');
+Route::get('/pesos', 'KohonenController@crearRed');
+Route::get('/entrenamiento', 'KohonenController@cargarPesos');
+
+
 /* Route::get('/', function () {
     return view('welcome');
 }); */

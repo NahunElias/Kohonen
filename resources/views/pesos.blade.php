@@ -18,8 +18,8 @@
             </a>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
-                <li><a href="/pesos" class="nav-link px-2 link-dark">Inicializar Pesos</a></li>
+                <li><a href="/" class="nav-link px-2 link-dark">Home</a></li>
+                <li><a href="/pesos" class="nav-link px-2 link-secondary">Inicializar Pesos</a></li>
                 <li><a href="/entrenamiento" class="nav-link px-2 link-dark">Entrenamiento</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
                 <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
@@ -33,33 +33,43 @@
         </div>
         <div class="container">
             <div class="center">
-                <h1>Banco de datos</h1>
+                <h1>Matriz de pesos</h1>
             </div>
             <table class="table">
                 <thead>
                 <tr>
-                    @for ($i = 1; $i <= $entradas; $i++)
-                        <th scope="col">X{{ $i }}</th>
+                    @for ($i = 0; $i <= $neuronas ; $i++)
+                        <th scope="col">N{{ $i }}</th>
                     @endfor
 
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach ($patrones as $patron)
+                    @for ($i = 0; $i <= $entradas ; $i++)
                     <tr>
 
+                        @for ($j = 0; $j <= $neuronas ; $j++)
 
-                        @for ($i = 1; $i <= $entradas; $i++)
-                        <td>{{ $patron['X'.$i] }}</td>
+                        <td>{{ $matriz[$j][$i] }}</td>
 
                         @endfor
 
-
                     </tr>
-
-                    @endforeach
+                    @endfor
                 </tbody>
             </table>
         </div>
+        <br>
+        {{-- <div class="container">
+            <div class="center">
+                <h1>Columna</h1>
+            </div>
+            @for($i = 1; $i <= 20; $i++)
+                @for($j = 1; $j <= 40; $j++)
+                {{ $matrizNueva }}
+                @endfor
+            @endfor
+        </div> --}}
     </body>
 </html>
+
